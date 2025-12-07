@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Kategori extends Model
+{
+    protected $fillable = [
+        'id',
+        'nama_kategori'
+    ];
+
+    public function topikKategori(){
+return $this->hasMany(Topik::class, 'id_kategori');    }
+}
